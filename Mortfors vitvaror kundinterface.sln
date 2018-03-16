@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mortfors vitvaror kundinterface", "Mortfors vitvaror kundinterface\Mortfors vitvaror kundinterface.csproj", "{D8847DE2-B35B-406F-8A1B-274E15ED4EF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8847DE2-B35B-406F-8A1B-274E15ED4EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8847DE2-B35B-406F-8A1B-274E15ED4EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8847DE2-B35B-406F-8A1B-274E15ED4EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8847DE2-B35B-406F-8A1B-274E15ED4EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5DB06F3-90CA-4CA9-8B7C-58A53709DA8F}
+	EndGlobalSection
+EndGlobal
