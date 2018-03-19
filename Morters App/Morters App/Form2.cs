@@ -24,6 +24,7 @@ namespace Morters_App
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DatabaseResolver.Disconnect();
             Form1 f1 = new Form1();
             f1.ShowDialog();
         }
