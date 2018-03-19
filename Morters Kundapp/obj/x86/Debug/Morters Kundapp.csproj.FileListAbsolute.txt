@@ -26,6 +26,7 @@ C:\Users\Patrik\source\repos\Morters Kundapp\Morters Kundapp\bin\Windows\x86\Deb
 C:\Users\Patrik\source\repos\Morters Kundapp\Morters Kundapp\bin\Windows\x86\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\Patrik\source\repos\Morters Kundapp\Morters Kundapp\bin\Windows\x86\Debug\Npgsql.xml
 C:\Users\Patrik\source\repos\Morters Kundapp\Morters Kundapp\bin\Windows\x86\Debug\System.Threading.Tasks.Extensions.xml
+<<<<<<< HEAD
 C:\Users\Reacotay\Documents\GitHub\Databas\Morters Kundapp\obj\x86\Debug\Morters Kundapp.exe
 C:\Users\Reacotay\Documents\GitHub\Databas\Morters Kundapp\obj\x86\Debug\Morters Kundapp.pdb
 C:\Users\Reacotay\Documents\GitHub\Databas\Morters Kundapp\obj\x86\Debug\Morters Kundapp.csprojResolveAssemblyReference.cache
@@ -51,3 +52,33 @@ C:\Users\Reacotay\Documents\GitHub\Databas\Morters Kundapp\bin\Windows\x86\Debug
 C:\Users\Reacotay\Documents\GitHub\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.DXGI.xml
 C:\Users\Reacotay\Documents\GitHub\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\Reacotay\Documents\GitHub\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+=======
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\Morters Kundapp.exe
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\Morters Kundapp.pdb
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\Npgsql.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\Npgsql.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\obj\x86\Debug\Morters Kundapp.csprojResolveAssemblyReference.cache
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\obj\x86\Debug\Morters Kundapp.csproj.CoreCompileInputs.cache
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\obj\x86\Debug\Morters Kundapp.exe
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters Kundapp\obj\x86\Debug\Morters Kundapp.pdb
+>>>>>>> 5233d9116ddd9a2b830c7d856a26338bc2975c37
