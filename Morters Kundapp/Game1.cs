@@ -34,7 +34,6 @@ namespace Morters_Kundapp
             KeyMouseReader.Update();
             if (KeyMouseReader.LeftClick())
                 DatabaseResolver.GetTavling();
-
             base.Update(gameTime);
         }
 
