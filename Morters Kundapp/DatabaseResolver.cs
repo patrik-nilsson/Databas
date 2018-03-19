@@ -15,12 +15,12 @@ namespace Morters_Kundapp
     {
         static bool boolfound = false;
         static NpgsqlConnection conn = new NpgsqlConnection("Server=pgserver.mah.se; Port=5432; UserId = ah7326; Password = emmodj9b; Database = ah7326");
-    
+        static NpgsqlCommand cmd = new NpgsqlCommand("SELECT version(); ", conn);
+        static NpgsqlDataReader dr = cmd.ExecuteReader();
         public static void Connect()
-        { 
+        {
+            dr.Close();
             conn.Open();
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT version(); ", conn);
-            NpgsqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
                 boolfound = true;
@@ -32,6 +32,9 @@ namespace Morters_Kundapp
                 Console.WriteLine("Data does not exist");
             }
             dr.Close();
+        }
+        public static void GetTavling()
+        {
             using (var cmd2 = new NpgsqlCommand("SELECT * FROM Tavling", conn))
             {
                 using (var reader = cmd2.ExecuteReader())
