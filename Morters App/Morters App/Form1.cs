@@ -20,6 +20,8 @@ namespace Morters_App
         {
             DatabaseResolver.Connect();
             InitializeComponent();
+            listBox1.DataSource = null;
+            listBox1.Items.Clear();
             listBox1.DataSource = DatabaseResolver.typeList;
         }
 
@@ -50,8 +52,15 @@ namespace Morters_App
         {
             listBox3.DataSource = null;
             listBox3.Items.Clear();
-            //foreach (string s in DatabaseResolver.GetInformation(listBox2.SelectedItem.ToString()))
-            //    stringList.Add(s);
+            try
+            {
+                stringList.Clear();
+                foreach (string s in DatabaseResolver.GetInformation(listBox2.SelectedItem.ToString()))
+                    stringList.Add(s);
+            }
+            catch (NullReferenceException)
+            {
+            }
             listBox3.DataSource = stringList;
             stringList.Clear();
         }

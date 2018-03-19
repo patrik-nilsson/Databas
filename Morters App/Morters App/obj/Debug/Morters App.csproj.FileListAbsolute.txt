@@ -29,3 +29,5 @@ C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Mor
 C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters App.exe
 C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters App.pdb
 C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters_App.Form3.resources
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters App\Morters App\obj\Debug\Morters_App.Form2.resources
+C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters App\Morters App\obj\Debug\Morters_App.Form3.resources

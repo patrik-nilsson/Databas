@@ -41,13 +41,24 @@ namespace Morters_App
             }
             dr.Close();
         }
+        public static void Disconnect()
+        {
+            try
+            {
+                conn.Close();
+            }
+            catch (InvalidCastException e)
+            {
+            }
+
+        }
         public static List<string> GetAllTypes()
         {
             stringList.Clear();
             cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
-                stringList.Add(dr.GetString(0)+"\r");
+                stringList.Add(dr.GetString(0));
             dr.Close();
             return stringList;
         }
@@ -57,23 +68,23 @@ namespace Morters_App
             cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE typ='"+type+"'", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
-                stringList.Add(dr.GetString(0) + "\r");
+                stringList.Add(dr.GetString(0));
             dr.Close();
             return stringList;
         }
         public static List<string> GetInformation(string item)
         {
             stringList.Clear();
-            cmd = new NpgsqlCommand("SELECT * FROM Vitvaror WHERE namn='" + item + "'", conn);
+            cmd = new NpgsqlCommand("SELECT * FROM Vitvaror WHERE namn='"+item+"'", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                stringList.Add(dr.GetString(1) + "\r");
-                stringList.Add(dr.GetString(2) + "\r");
-                stringList.Add(dr.GetString(3) + "\r");
-                stringList.Add(dr.GetString(4) + "\r");
-                stringList.Add(dr.GetString(5) + "\r");
-                stringList.Add(dr.GetString(6) + "\r");
+                stringList.Add(dr.GetString(1));
+                stringList.Add(dr.GetString(2));
+                stringList.Add(dr.GetString(3));
+                stringList.Add(dr.GetString(4));
+                stringList.Add(dr.GetString(5));
+                stringList.Add(dr.GetString(6));
             }
             dr.Close();
             return stringList;
