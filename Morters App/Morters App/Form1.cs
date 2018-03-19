@@ -14,6 +14,8 @@ namespace Morters_App
     {
         List<string> stringList = new List<string>();
         int lbindex1;
+
+        
         public Form1()
         {
             DatabaseResolver.Connect();
@@ -58,6 +60,11 @@ namespace Morters_App
 
         }
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
