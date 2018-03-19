@@ -26,3 +26,5 @@ C:\Users\Patrik\source\repos\Morters Kundapp\Morters Kundapp\bin\Windows\x86\Deb
 C:\Users\Patrik\source\repos\Morters Kundapp\Morters Kundapp\bin\Windows\x86\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\Patrik\source\repos\Morters Kundapp\Morters Kundapp\bin\Windows\x86\Debug\Npgsql.xml
 C:\Users\Patrik\source\repos\Morters Kundapp\Morters Kundapp\bin\Windows\x86\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters Kundapp\obj\x86\Debug\Morters Kundapp.exe
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters Kundapp\obj\x86\Debug\Morters Kundapp.pdb
