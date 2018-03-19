@@ -31,9 +31,15 @@ namespace Morters_Kundapp
         {
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             //    Exit();
+<<<<<<< HEAD
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+                DatabaseResolver.Connect();
+
+=======
             KeyMouseReader.Update();
             if (KeyMouseReader.LeftClick())
                 DatabaseResolver.GetTavling();
+>>>>>>> 5233d9116ddd9a2b830c7d856a26338bc2975c37
             base.Update(gameTime);
         }
 
