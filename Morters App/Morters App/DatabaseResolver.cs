@@ -32,13 +32,33 @@ namespace Morters_App
             }
             dr.Close();
         }
-        public static List<string> GetTavling()
+        public static List<string> GetAllTypes()
         {
             stringList.Clear();
-            cmd = new NpgsqlCommand("SELECT * FROM Kunder", conn);
+            cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
-                stringList.Add(dr.GetString(1)+"\r");
+                stringList.Add(dr.GetString(0)+"\r");
+            dr.Close();
+            return stringList;
+        }
+        public static List<string> GetType(string type)
+        {
+            stringList.Clear();
+            cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE typ='"+type+"'", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+                stringList.Add(dr.GetString(0) + "\r");
+            dr.Close();
+            return stringList;
+        }
+        public static List<string> GetManufacturer(string manufacturer)
+        {
+            stringList.Clear();
+            cmd = new NpgsqlCommand("SELECT tillverkare FROM Vitvaror WHERE tillverkare='" + manufacturer + "'", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+                stringList.Add(dr.GetString(0) + "\r");
             dr.Close();
             return stringList;
         }

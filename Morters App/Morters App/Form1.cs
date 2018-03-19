@@ -12,6 +12,8 @@ namespace Morters_App
 {
     public partial class Form1 : Form
     {
+        List<string> stringList = new List<string>();
+        int lbindex1;
         public Form1()
         {
             DatabaseResolver.Connect();
@@ -20,19 +22,39 @@ namespace Morters_App
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(richTextBox1.TextLength>0)
-                richTextBox1.Text = null;
+            listBox2.DataSource = null;
+            listBox2.Items.Clear();
             string curItem = listBox1.SelectedItem.ToString();
-            int index = listBox1.FindString(curItem);
-            if (index == 0)
-                foreach (string s in DatabaseResolver.GetTavling())
-                    richTextBox1.Text += s;
-            
+            lbindex1 = listBox1.FindString(curItem);
+            if (lbindex1 == 0)
+            {
+                foreach (string s in DatabaseResolver.GetAllTypes())
+                {
+                    stringList.Add(s);
+                }
+                listBox2.DataSource = stringList;
+                stringList.Clear();
+            }
+            else
+            {
+                foreach (string s in DatabaseResolver.GetType(listBox1.SelectedItem.ToString()))
+                    stringList.Add(s);
+                listBox2.DataSource = stringList;
+                stringList.Clear();
+            }
+        }
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
