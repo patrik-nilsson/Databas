@@ -12,3 +12,20 @@ C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters App
 C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters App\Morters App\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters App\Morters App\obj\Debug\Morters App.exe
 C:\Users\Patrik\source\repos\Mortfors vitvaror kundinterface\Databas\Morters App\Morters App\obj\Debug\Morters App.pdb
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\bin\Debug\Morters App.exe.config
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\bin\Debug\Morters App.exe
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\bin\Debug\Morters App.pdb
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\bin\Debug\Npgsql.dll
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\bin\Debug\Npgsql.xml
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters App.csprojResolveAssemblyReference.cache
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters_App.Form1.resources
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters_App.Form2.resources
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters_App.Properties.Resources.resources
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters App.csproj.GenerateResource.cache
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters App.csproj.CoreCompileInputs.cache
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters App.csproj.CopyComplete
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters App.exe
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters App.pdb
+C:\Users\Reacotay\Documents\GitHub\Databas\Morters App\Morters App\obj\Debug\Morters_App.Form3.resources
