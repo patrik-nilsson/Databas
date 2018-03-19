@@ -18,6 +18,7 @@ namespace Morters_App
         {
             DatabaseResolver.Connect();
             InitializeComponent();
+            listBox1.DataSource = DatabaseResolver.typeList;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,12 +46,16 @@ namespace Morters_App
         }
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            listBox3.DataSource = null;
+            listBox3.Items.Clear();
+            //foreach (string s in DatabaseResolver.GetInformation(listBox2.SelectedItem.ToString()))
+            //    stringList.Add(s);
+            listBox3.DataSource = stringList;
+            stringList.Clear();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
         private void label2_Click(object sender, EventArgs e)
         {
