@@ -12,7 +12,7 @@ namespace Morters_App
     {
         static bool boolfound = false;
         static NpgsqlConnection conn = new NpgsqlConnection("Server=pgserver.mah.se; Port=5432; UserId = ah7326; Password = emmodj9b; Database = vitvaruhandel");
-        static NpgsqlCommand cmd;
+        public static NpgsqlCommand cmd;
         static NpgsqlDataReader dr;
         static List<string> stringList = new List<string>();
         public static List<string> typeList = new List<string>();
