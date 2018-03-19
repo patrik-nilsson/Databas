@@ -9,6 +9,8 @@ namespace Morters_Kundapp
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        SquareDrawer sd;
+        Texture2D rectTex;
 
         public Game1()
         {
@@ -20,17 +22,18 @@ namespace Morters_Kundapp
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             DatabaseResolver.Connect();
+            rectTex = new Texture2D(GraphicsDevice, 1, 1);
+            rectTex.SetData<Color>(new Color[] { Color.White });
+            sd = new SquareDrawer(GraphicsDevice,Vector2.Zero,rectTex);
         }
 
-        protected override void UnloadContent()
-        {
-
-        }
         protected override void Update(GameTime gameTime)
         {
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             //    Exit();
-                
+            KeyMouseReader.Update();
+            if (KeyMouseReader.LeftClick())
+                DatabaseResolver.GetTavling();
 
             base.Update(gameTime);
         }
@@ -38,6 +41,10 @@ namespace Morters_Kundapp
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.LightGray);
+
+            spriteBatch.Begin();
+            sd.Draw(spriteBatch);
+            spriteBatch.End();
 
 
             base.Draw(gameTime);
