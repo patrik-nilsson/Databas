@@ -35,12 +35,14 @@ namespace Morters_App
             dr.Close();
             cmd = new NpgsqlCommand("SELECT typ FROM Vitvaror GROUP BY typ", conn);
             dr = cmd.ExecuteReader();
+            typeList.Clear();
             typeList.Add("Alla");
             while (dr.Read())
             {
                 typeList.Add(dr.GetString(0));
             }
             dr.Close();
+            columnList.Clear();
             cmd = new NpgsqlCommand("SELECT column_name FROM information_schema.columns WHERE table_name = 'vitvaror'", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -71,10 +73,37 @@ namespace Morters_App
             dr.Close();
             return stringList;
         }
-        public static List<string> GetType(string type)
+        public static List<string> GetAllManufacturers()
         {
             stringList.Clear();
-            cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE typ='"+type+"'", conn);
+            cmd = new NpgsqlCommand("SELECT tillverkare FROM Vitvaror", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+                stringList.Add(dr.GetString(0));
+            dr.Close();
+            return stringList;
+        }
+        public static List<string> GetItems(string type, string manfucaturer)
+        {
+            stringList.Clear();
+            if (type == "Alla" && manfucaturer == "Alla")
+                cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror", conn);
+            else if (type == "Alla")
+                cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE tillverkare='" + manfucaturer + "'", conn);
+            else if (manfucaturer == "Alla")
+                cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE typ='" + type + "'", conn);
+            else
+                cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE typ='"+type+"' AND tillverkare='"+manfucaturer+"'", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+                stringList.Add(dr.GetString(0));
+            dr.Close();
+            return stringList;
+        }
+        public static List<string> GetManufacturers(string type)
+        {
+            stringList.Clear();
+            cmd = new NpgsqlCommand("SELECT tillverkare FROM Vitvaror WHERE typ='" + type + "'", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
                 stringList.Add(dr.GetString(0));

@@ -46,7 +46,7 @@ namespace Morters_App
             }
             else
             {
-                foreach (string s in DatabaseResolver.GetType(listBox1.SelectedItem.ToString()))
+                foreach (string s in DatabaseResolver.GetItems(listBox1.SelectedItem.ToString(),"*"))
                     stringList.Add(s);
                 listBox2.DataSource = stringList;
                 stringList.Clear();

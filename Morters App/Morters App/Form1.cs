@@ -14,8 +14,9 @@ namespace Morters_App
     {
         List<string> stringList = new List<string>();
         int lbindex1;
+        int lbindex2;
 
-        
+
         public Form1()
         {
             DatabaseResolver.Connect();
@@ -30,27 +31,45 @@ namespace Morters_App
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBox2.DataSource = null;
-            listBox2.Items.Clear();
+            listBox5.DataSource = null;
+            listBox5.Items.Clear();
             string curItem = listBox1.SelectedItem.ToString();
             lbindex1 = listBox1.FindString(curItem);
             if (lbindex1 == 0)
             {
-                foreach (string s in DatabaseResolver.GetAllTypes())
+                stringList.Add("Alla");
+                foreach (string s in DatabaseResolver.GetAllManufacturers())
                 {
                     stringList.Add(s);
                 }
-                listBox2.DataSource = stringList;
+                listBox5.DataSource = stringList;
                 stringList.Clear();
             }
             else
             {
-                foreach (string s in DatabaseResolver.GetType(listBox1.SelectedItem.ToString()))
+                stringList.Add("Alla");
+                foreach (string s in DatabaseResolver.GetManufacturers(listBox1.SelectedItem.ToString()))
+                    stringList.Add(s);
+                listBox5.DataSource = stringList;
+                stringList.Clear();
+            }
+        }
+        private void listBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox2.DataSource = null;
+            listBox2.Items.Clear();
+            try
+            {
+                stringList.Clear();
+                foreach (string s in DatabaseResolver.GetItems(listBox1.SelectedItem.ToString(), listBox5.SelectedItem.ToString()))
                     stringList.Add(s);
                 listBox2.DataSource = stringList;
                 stringList.Clear();
             }
-        }
+            catch (NullReferenceException)
+            {
+            }
+}
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox3.DataSource = null;
