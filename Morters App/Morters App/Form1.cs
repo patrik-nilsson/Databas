@@ -23,6 +23,9 @@ namespace Morters_App
             listBox1.DataSource = null;
             listBox1.Items.Clear();
             listBox1.DataSource = DatabaseResolver.typeList;
+            listBox4.DataSource = null;
+            listBox4.Items.Clear();
+            listBox4.DataSource = DatabaseResolver.columnList;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,6 +68,10 @@ namespace Morters_App
             stringList.Clear();
         }
         private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

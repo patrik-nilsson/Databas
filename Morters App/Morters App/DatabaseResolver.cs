@@ -16,6 +16,7 @@ namespace Morters_App
         static NpgsqlDataReader dr;
         static List<string> stringList = new List<string>();
         public static List<string> typeList = new List<string>();
+        public static List<string> columnList = new List<string>();
         public static void Connect()
         {
             conn.Open();
@@ -39,6 +40,14 @@ namespace Morters_App
             {
                 typeList.Add(dr.GetString(0));
             }
+            dr.Close();
+            cmd = new NpgsqlCommand("SELECT column_name FROM information_schema.columns WHERE table_name = 'vitvaror'", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                columnList.Add(dr.GetString(0));
+            }
+            columnList.RemoveAt(0);
             dr.Close();
         }
         public static void Disconnect()
@@ -75,7 +84,7 @@ namespace Morters_App
         public static List<string> GetInformation(string item)
         {
             stringList.Clear();
-            cmd = new NpgsqlCommand("SELECT * FROM Vitvaror WHERE namn='"+item+"'", conn);
+            cmd = new NpgsqlCommand("SELECT * FROM Vitvaror WHERE namn='" + item + "'", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -85,6 +94,18 @@ namespace Morters_App
                 stringList.Add(dr.GetString(4));
                 stringList.Add(dr.GetString(5));
                 stringList.Add(dr.GetString(6));
+            }
+            dr.Close();
+            return stringList;
+        }
+        public static List<string> GetColumns(string item)
+        {
+            stringList.Clear();
+            cmd = new NpgsqlCommand("SELECT * FROM information_schema.columns WHERE table_schema = 'table_columns' AND table_name = 'Vitvaror'", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                stringList.Add(dr.GetString(0));
             }
             dr.Close();
             return stringList;
