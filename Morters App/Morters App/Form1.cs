@@ -13,6 +13,7 @@ namespace Morters_App
     public partial class Form1 : Form
     {
         List<string> stringList = new List<string>();
+        List<string> compareList = new List<string>();
         int lbindex1;
         int lbindex2;
 
@@ -84,6 +85,9 @@ namespace Morters_App
             {
             }
             listBox3.DataSource = stringList;
+            compareList.Clear();
+            foreach (string s in stringList)
+                compareList.Add(s);
             stringList.Clear();
         }
         private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,6 +106,18 @@ namespace Morters_App
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox6.DataSource = null;
+            listBox6.Items.Clear();
+            listBox6.DataSource = compareList;
         }
     }
 }
