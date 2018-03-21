@@ -17,6 +17,10 @@ namespace Morters_App
         static List<string> stringList = new List<string>();
         public static List<string> typeList = new List<string>();
         public static List<string> columnList = new List<string>();
+
+        static int ikid;
+        static int x;
+
         public static void Connect()
         {
             conn.Open();
@@ -151,6 +155,59 @@ namespace Morters_App
             }
             dr.Close();
             return stringList;
+        }
+
+        public static string GetItemID(string item)
+        {
+            stringList.Clear();
+            cmd = new NpgsqlCommand("SELECT v_id FROM Vitvaror WHERE namn='" + item + "'", conn);
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                stringList.Add(dr.GetString(0));
+            }
+            dr.Close();
+            return stringList[0];
+        }
+        public static bool CreateInkop(int item, int amount, string deliverer, int price)
+        {
+            stringList.Clear();
+            cmd = new NpgsqlCommand("SELECT l_id FROM Leverantor WHERE namn='" + deliverer + "'", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                stringList.Add(dr.GetString(0));
+            }
+            dr.Close();
+
+            cmd = new NpgsqlCommand("SELECT i_id FROM Inkop WHERE i_id = (SELECT max(i_id) FROM Inkop)", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ikid = Convert.ToInt32(dr.GetString(0));
+                ikid++;
+            }
+            dr.Close();
+
+            cmd = new NpgsqlCommand("INSERT INTO Inkop VALUES(" + ikid +"," + item + "," + Convert.ToInt32(stringList[0]) + "," + price + "," + amount + ")", conn);
+            dr = cmd.ExecuteReader();
+            dr.Close();
+
+            return true;
+        }
+        public static void IncreaseAmount(int item, int amount)
+        {
+            stringList.Clear();
+            cmd = new NpgsqlCommand("SELECT antal FROM Vitvaror WHERE v_id='" + item + "'", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                x = Convert.ToInt32(dr.GetString(0)) + amount;
+            }
+            dr.Close();
+            cmd = new NpgsqlCommand("UPDATE Vitvaror SET antal=" + x + " WHERE v_id=" + item, conn);
+            dr = cmd.ExecuteReader();
+            dr.Close();
         }
     }
 }
