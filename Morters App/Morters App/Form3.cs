@@ -37,7 +37,7 @@ namespace Morters_App
             lbindex1 = listBox1.FindString(curItem);
             if (lbindex1 == 0)
             {
-                foreach (string s in DatabaseResolver.GetAllTypes())
+                foreach (string s in DatabaseResolver.GetTables(listBox1.SelectedItem.ToString()))
                 {
                     stringList.Add(s);
                 }
@@ -54,6 +54,11 @@ namespace Morters_App
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

@@ -83,17 +83,17 @@ namespace Morters_App
             dr.Close();
             return stringList;
         }
-        public static List<string> GetItems(string type, string manfucaturer)
+        public static List<string> GetItems(string type, string manufacturer)
         {
             stringList.Clear();
-            if (type == "Alla" && manfucaturer == "Alla")
+            if (type == "Alla" && manufacturer == "Alla")
                 cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror", conn);
             else if (type == "Alla")
-                cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE tillverkare='" + manfucaturer + "'", conn);
-            else if (manfucaturer == "Alla")
+                cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE tillverkare='" + manufacturer + "'", conn);
+            else if (manufacturer == "Alla")
                 cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE typ='" + type + "'", conn);
             else
-                cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE typ='"+type+"' AND tillverkare='"+manfucaturer+"'", conn);
+                cmd = new NpgsqlCommand("SELECT namn FROM Vitvaror WHERE typ='"+type+"' AND tillverkare='"+manufacturer+"'", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
                 stringList.Add(dr.GetString(0));
@@ -133,6 +133,19 @@ namespace Morters_App
             cmd = new NpgsqlCommand("SELECT * FROM information_schema.columns WHERE table_schema = 'table_columns' AND table_name = 'Vitvaror'", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
+            {
+                stringList.Add(dr.GetString(0));
+            }
+            dr.Close();
+            return stringList;
+        }
+
+        public static List<string> GetTables(string item)
+        {
+            stringList.Clear();
+            cmd = new NpgsqlCommand("SELECT adress FROM Kunder", conn);
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
             {
                 stringList.Add(dr.GetString(0));
             }
