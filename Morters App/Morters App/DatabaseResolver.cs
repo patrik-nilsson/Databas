@@ -19,7 +19,9 @@ namespace Morters_App
         public static List<string> columnList = new List<string>();
 
         static int ikid;
+        static int kkid;
         static int x;
+        static int kprice;
 
         public static void Connect()
         {
@@ -203,6 +205,46 @@ namespace Morters_App
             while (dr.Read())
             {
                 x = Convert.ToInt32(dr.GetString(0)) + amount;
+            }
+            dr.Close();
+            cmd = new NpgsqlCommand("UPDATE Vitvaror SET antal=" + x + " WHERE v_id=" + item, conn);
+            dr = cmd.ExecuteReader();
+            dr.Close();
+        }
+        public static bool CreateSalj(int item, int amount, long customer)
+        {
+            stringList.Clear();
+            cmd = new NpgsqlCommand("SELECT k_id FROM Kundkop WHERE k_id = (SELECT max(k_id) FROM Kundkop)", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                kkid = Convert.ToInt32(dr.GetString(0));
+                kkid++;
+            }
+            dr.Close();
+            cmd = new NpgsqlCommand("SELECT saljpris FROM Vitvaror WHERE v_id=" + item, conn);
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                kprice = Convert.ToInt32(dr.GetString(0));
+                kprice = kprice * amount;
+            }
+            dr.Close();
+
+            cmd = new NpgsqlCommand("INSERT INTO Kundkop VALUES(" + kkid + "," + customer + "," + item + "," + amount + "," + kprice + ")", conn);
+            dr = cmd.ExecuteReader();
+            dr.Close();
+
+            return true;
+        }
+        public static void DecreaseAmount(int item, int amount)
+        {
+            stringList.Clear();
+            cmd = new NpgsqlCommand("SELECT antal FROM Vitvaror WHERE v_id='" + item + "'", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                x = Convert.ToInt32(dr.GetString(0)) - amount;
             }
             dr.Close();
             cmd = new NpgsqlCommand("UPDATE Vitvaror SET antal=" + x + " WHERE v_id=" + item, conn);

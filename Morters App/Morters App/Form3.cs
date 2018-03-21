@@ -16,7 +16,7 @@ namespace Morters_App
 
         //variabler för kundköp
         int kkx;
-        int personnummer;
+        long personnummer;
 
         //variabler för inköp
         int ikx; //antal varor som ska inköpas
@@ -100,6 +100,16 @@ namespace Morters_App
             }
             //lägg in ett värde i inkop med ett unikt ID, varuID, leverantörid, inköpspris, och antal.
             //"INSER INTO Inkop VALUES(ikid,svid,leverantor,ikpris,ikx)"
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            kkx = Convert.ToInt32(textBox4.Text);
+            personnummer = Convert.ToInt64(textBox5.Text);
+            if (DatabaseResolver.CreateSalj(svid, kkx, personnummer))
+            {
+                DatabaseResolver.DecreaseAmount(svid, kkx);
+            }
         }
     }
 }
