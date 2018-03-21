@@ -12,7 +12,14 @@ namespace Morters_App
 {
     public partial class Form3 : Form
     {
+        //variabler för kundköp
+        int kkx;
+        int personnummer;
 
+        //variabler för inköp
+        int ikx;
+        string leverantor;
+        int ikpris;
 
         List<string> stringList = new List<string>();
 
@@ -20,8 +27,15 @@ namespace Morters_App
         {
             DatabaseResolver.Connect();
             InitializeComponent();
-            listBox1.DataSource = DatabaseResolver.typeList;
-            
+            listBox1.DataSource = null;
+            listBox1.Items.Clear();
+            foreach (string s in DatabaseResolver.GetAllTypes())
+                stringList.Add(s);
+            listBox1.DataSource = stringList;
+            stringList.Clear();
+            listBox3.DataSource = null;
+            listBox3.Items.Clear();
+            listBox3.DataSource = DatabaseResolver.columnList;
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -30,27 +44,19 @@ namespace Morters_App
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int lbindex1;
             listBox2.DataSource = null;
             listBox2.Items.Clear();
-            string curItem = listBox1.SelectedItem.ToString();
-            lbindex1 = listBox1.FindString(curItem);
-            if (lbindex1 == 0)
+            try
             {
-                foreach (string s in DatabaseResolver.GetTables(listBox1.SelectedItem.ToString()))
-                {
-                    stringList.Add(s);
-                }
-                listBox2.DataSource = stringList;
                 stringList.Clear();
+                foreach (string s in DatabaseResolver.GetInformation(listBox1.SelectedItem.ToString()))
+                    stringList.Add(s);
             }
-            else
+            catch (NullReferenceException)
             {
-                foreach (string s in DatabaseResolver.GetItems(listBox1.SelectedItem.ToString(),"*"))
-                    stringList.Add(s);
-                listBox2.DataSource = stringList;
-                stringList.Clear();
             }
+            listBox2.DataSource = stringList;
+            stringList.Clear();
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,6 +65,21 @@ namespace Morters_App
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
